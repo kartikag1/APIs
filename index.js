@@ -45,6 +45,7 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
+// API for Signup
 app.get("/api/signup/:usernamee/:passwordd", function(req, res) {
   var username = req.params.usernamee;
   var password = req.params.passwordd;
@@ -68,6 +69,7 @@ app.get("/api/signup/:usernamee/:passwordd", function(req, res) {
   });
 });
 
+//API for login
 app.get("/api/login/:usernameee/:passworddd", function(req, res) {
   var iusername = req.params.usernameee;
   var ipassword = req.params.passworddd;
@@ -80,10 +82,13 @@ app.get("/api/login/:usernameee/:passworddd", function(req, res) {
       res.send("LOGIN UN-SUCESSFULL");
     }
   });
+  
+  //API to upload media
   app.get("/api/media/upload", function(req, res) {
     res.render("uploads");
   });
 
+  //Uploading
   app.post("/upload", function(req, res) {
     var upload = multer({
       storage: storage,
@@ -117,6 +122,8 @@ app.get("/api/login/:usernameee/:passworddd", function(req, res) {
       console.log(linkss);
     });
   });
+  
+  //API to get all uploaded media links
   app.get("/api/getallmedia", function(req, res) {
     var x;
     var linkss;
@@ -130,6 +137,7 @@ app.get("/api/login/:usernameee/:passworddd", function(req, res) {
   });
 });
 
+//API for forgot password (sending mail)
 app.get("/api/forgot/:usernameeee/:passwordddd", function(req, res) {
   var iiusername = req.params.usernameeee;
   var iipassword = req.params.passwordddd;
@@ -159,6 +167,7 @@ app.get("/api/forgot/:usernameeee/:passwordddd", function(req, res) {
   });
 });
 
+//API to verify sent code and change the password to the new one 
 app.get("/api/verify/:usernameeee/:passwordddd/:code/:newpass", function(
   req,
   res
