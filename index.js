@@ -153,7 +153,7 @@ app.get("/api/forgot/:usernameeee/:passwordddd", function(req, res) {
       ) {});
       res.send("PASSWORD RESET CODE SENT");
     });
-    //sendgrid api giving some issue , due to maintenance, rest all funcionalities are working the secret code
+    //sendgrid api giving some issue , due to maintenance, rest all funcionalities are working the secret code has been initialized for verification and can be set to generate random values.
     //=================================================================================
     // const msg = {
     //   to: "kartikag1@yahoo.com",
