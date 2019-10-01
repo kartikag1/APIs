@@ -1,10 +1,8 @@
-var express = require("express");
-var multer = require("multer");
-var bodyParser = require("body-parser");
-var path = require("path");
-var nodemailer = require("nodemailer");
-var mongoose = require("mongoose");
-var ejs = require("ejs");
+const express = require("express");
+const multer = require("multer");
+const bodyParser = require("body-parser");
+const path = require("path");const nodemailer = require("nodemailer");
+const mongoose = require("mongoose");const ejs = require("ejs");
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 mongoose.connect("mongodb://localhost/intern", { useNewUrlParser: true });
